@@ -1,4 +1,53 @@
-.App {
-  color:saddlebrown;
-  text-align: center;
+/*
+Color palatte
+Dark brown: 4D4D4D
+Dull red: B46060
+Bright (pale-ish) orange: FFBF9B
+Pale orange: FFF4E0
+*/
+
+body {
+  background-color: #FFF4E0;
+  color: #4D4D4D;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.app-name {
+  font-size: 1.25rem;
+}
+.nav-bar {
+  border-bottom: #4D4D4D 1px solid;
+}
+
+.icon {
+  color: #4D4D4D;
+}
+.icon:hover {
+  color: #B46060;
+}
+.dingbat {
+  margin: 15px auto;
+}
+
+.banner {
+  margin: 50px auto;
+}
+.banner-button {
+  background-color: #4D4D4D;
+  border: none;
+  color: #FFF4E0;
+  font-size: 1.1rem;
+  margin: 5px;
+  padding: 10px; /* 15, 30*/
+}
+.banner-button:hover {
+  background-color: #B46060;
+}
+.welcome {
+  font-size: 1.5rem;
+}
+
+footer {
+  margin-top: 50px;
 }
