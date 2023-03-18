@@ -10,21 +10,22 @@ function Shelf(bookLists) {
 
         // and the top five books (arrar of objects)
         list.books.forEach(book => {
-            topFiveBooks.push({
-                title: book.title,
-                author: book.author,
-                image: book.book_image,
-                publisher: book.publisher,
-                description: book.description
-            })
+            topFiveBooks.push(<Book 
+                key={book.title}
+                title={book.title} 
+                author={book.author} 
+                image={book.book_image} 
+                publisher={book.publisher} 
+                description={book.description} 
+            />)
         })
     });
 
     return (
         <div className="shelf">
-            {genreHeaders.map((header, i) => (<div className='shelf-row'>
+            {genreHeaders.map((header, i) => (<div>
                 {header}
-                {topFiveBooks.slice(5*i,5*(i+1)).map(book => (<Book key={book.title} title={book.title} author={book.author} image={book.image} publisher={book.publisher} />))}
+                <div className='shelf-row'>{topFiveBooks.slice(5*i,5*(i+1))}</div>
             </div>))}
         </div>
     )

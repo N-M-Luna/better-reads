@@ -5,7 +5,6 @@ Dull red: B46060
 Bright (pale-ish) orange: FFBF9B
 Pale orange: FFF4E0
 */
-
 body {
   background-color: rgba(255, 244, 224, 0.5); /* color #FFF4E0 with 50% opacity */
   color: #4D4D4D;
@@ -13,6 +12,7 @@ body {
   width: 80%;
 }
 
+/* Top of hte page */
 .app-name {
   font-size: 1.25rem;
 }
@@ -20,6 +20,7 @@ body {
   border-bottom: #4D4D4D 1px solid;
 }
 
+/* Icons (in Navbar, Banner, and Footer) */
 .icon {
   color: #4D4D4D;
 }
@@ -30,16 +31,18 @@ body {
   margin: 15px auto;
 }
 
+/* Welcome banner */
 .banner {
   margin: 50px auto;
 }
 .banner-button {
   background-color: #4D4D4D;
   border: none;
+  border-radius: 15px;
   color: #FFF4E0;
   font-size: 1.1rem;
   margin: 5px;
-  padding: 10px; /* 15, 30*/
+  padding: 10px;
 }
 .banner-button:hover {
   background-color: #B46060;
@@ -48,15 +51,31 @@ body {
   font-size: 1.5rem;
 }
 
+/* Book shelves (in /library and /search) */
+.shelf-row {
+  display: flex;
+}
 .book-div {
   display: inline-block;
   width: 20%;
 }
 .book-cover {
   width: 90%;
+} /* TODO Change book-div and book-cover when screen is less than... */
+.add-to-lib-btn {
+  background-color: #4D4D4D;
+  border: none;
+  border-radius: 10px;
+  color: #FFF4E0;
+  margin: 5px 0;
+  padding: 7px;
+}
+.add-to-lib-btn:hover {
+  background-color: #B46060;
 }
 
 footer {
   border-top: #4D4D4D 1px solid;
   margin-top: 50px;
+  padding-top: 20px;
 }
