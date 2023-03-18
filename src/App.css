@@ -7,7 +7,7 @@ Pale orange: FFF4E0
 */
 
 body {
-  background-color: #FFF4E0;
+  background-color: rgba(255, 244, 224, 0.5); /* color #FFF4E0 with 50% opacity */
   color: #4D4D4D;
   margin: 0 auto;
   width: 80%;
@@ -48,6 +48,15 @@ body {
   font-size: 1.5rem;
 }
 
+.book-div {
+  display: inline-block;
+  width: 20%;
+}
+.book-cover {
+  width: 90%;
+}
+
 footer {
+  border-top: #4D4D4D 1px solid;
   margin-top: 50px;
 }

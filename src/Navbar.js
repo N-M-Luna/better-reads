@@ -9,7 +9,7 @@ function Navbar() {
           <Link to={'/library'}><i className="icon fa-solid fa-book"></i></Link> &emsp;
           <Link to={'/profile'}><i className='icon fa-solid fa-user'></i></Link> &emsp; 
           <Link to={'/search'}><i className="icon fa-solid fa-magnifying-glass"></i></Link></p>
-        <p>Welcome, fellow bookworm!</p>
+        <p>Hello, fellow bookworm!</p>
       </div>
     )
 }
