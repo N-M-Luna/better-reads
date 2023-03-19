@@ -5,7 +5,8 @@ function Footer() {
             <p>©{thisYear} BetterReads</p>
             <p>
                 <i className="icon fa-brands fa-facebook"></i> &emsp; 
-                <i className="icon fa-brands fa-twitter"></i>
+                <i className="icon fa-brands fa-twitter"></i> &emsp; 
+                <i className="icon fa-brands fa-instagram"></i>
             </p>
         </footer>
     )

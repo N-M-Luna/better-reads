@@ -12,12 +12,18 @@ body {
   width: 80%;
 }
 
-/* Top of hte page */
+/* Top of the page */
 .app-name {
+  color: #4D4D4D;
+  text-decoration: none;
   font-size: 1.25rem;
+}
+.app-name:hover {
+  color: #B46060;
 }
 .nav-bar {
   border-bottom: #4D4D4D 1px solid;
+  margin-bottom: 50px;
 }
 
 /* Icons (in Navbar, Banner, and Footer) */
@@ -62,7 +68,7 @@ body {
 .book-cover {
   width: 90%;
 } /* TODO Change book-div and book-cover when screen is less than... */
-.add-to-lib-btn {
+.library-action-btn {
   background-color: #4D4D4D;
   border: none;
   border-radius: 10px;
@@ -70,7 +76,7 @@ body {
   margin: 5px 0;
   padding: 7px;
 }
-.add-to-lib-btn:hover {
+.library-action-btn:hover {
   background-color: #B46060;
 }
 

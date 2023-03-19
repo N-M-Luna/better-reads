@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from "react";
-import Shelf from './Shelf';
+import Book from './Book';
 
-function Search() {
-
+function Search({myLibrary, addToLibrary, removeFromLibrary}) {
+  // Books on the shelf
   const [bookLists, setBookLists] = useState([]);
+
+  // GET some books
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -34,13 +36,48 @@ function Search() {
     return <p>Something went wrong...</p>
   }
 
+  // Sift through the data to fill the shelf
+  const genreHeaders = []
+  const topFiveBooks = []
+  let isInLibrary
+
+  bookLists.forEach((list, i) => {
+    // Each list has a genre (str) and...
+    genreHeaders.push(<h2 key={i}>{list.list_name}</h2>)
+
+    // and the top five books (arrar of objects)
+    list.books.forEach((book, index) => {
+      isInLibrary = false
+      myLibrary.forEach(myBook => {
+        if (book.title === myBook.title) {
+          isInLibrary = true;
+        }
+      })
+      topFiveBooks.push(<Book
+        key={5*i+index}
+        title={book.title}
+        author={book.author}
+        image={book.book_image}
+        publisher={book.publisher}
+        description={book.description}
+        addToLibrary={addToLibrary}
+        removeFromLibrary={removeFromLibrary}
+        isInLibrary={isInLibrary}
+      />)
+    })
+  });
+
     return (
         <div>
-            <p>Search for: _________ </p>
+            <p>Search best-selling books by author: _________ or by date: __________ </p>
+            <span className="dingbat fa-solid fa-book-open-reader"></span>
+
             <p>Or browse the titles below.</p>
-            <Shelf bookLists={bookLists} />
+            {genreHeaders.map((header, i) => (<div>
+                {header}
+                <div className='shelf-row'>{topFiveBooks.slice(5 * i, 5 * (i + 1))}</div>
+            </div>))}
         </div>
     )
  }
-
 export default Search;
