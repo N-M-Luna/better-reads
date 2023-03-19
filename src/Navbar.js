@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-function Navbar() {
+function Navbar({userName}) {
     return (
         <div className='nav-bar'>
         <p> 
@@ -10,7 +10,7 @@ function Navbar() {
           <Link to={'/library'}><i className="icon fa-solid fa-book"></i></Link> &emsp;
           <Link to={'/profile'}><i className='icon fa-solid fa-user'></i></Link> &emsp; 
           <Link to={'/search'}><i className="icon fa-solid fa-magnifying-glass"></i></Link></p>
-        <p>Hello, fellow bookworm!</p>
+        <p>Hello, {userName}!</p>
       </div>
     )
 }

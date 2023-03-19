@@ -80,6 +80,14 @@ body {
   background-color: #B46060;
 }
 
+/* Profile */
+.text-link {
+  text-decoration: underline;
+}
+.text-link:hover {
+  color: #B46060;
+}
+
 footer {
   border-top: #4D4D4D 1px solid;
   margin-top: 50px;

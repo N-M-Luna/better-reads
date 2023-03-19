@@ -5,8 +5,8 @@ class Book extends React.Component {
         super(props);
     }
     render() {
-        // TODO The button for each book should have the title or book info. This is what needs to be passed on as parameter to add/remove fns
         const { title, author, image, publisher, description, addToLibrary, removeFromLibrary, isInLibrary } = this.props
+        
         const actionButton = isInLibrary ?
             <button className="library-action-btn" onClick={() => removeFromLibrary(title)}>Remove from library</button>
             : <button className="library-action-btn" onClick={() => addToLibrary(this.props)}>Add to library</button>

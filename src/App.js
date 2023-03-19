@@ -21,27 +21,30 @@ class BookObj {
 }
 
 function App() {
-  const [myLibrary, setMyLibrary] = useState([new BookObj('Lewis Carrol', 'Through the looking glass', '', 'Penguin', 'This is the best book ever')]);
-
+  // Personal Library
+  const [myLibrary, setMyLibrary] = useState([]);
   const addToLibrary = (book) => {
     const {title, author, image, publisher, description} = book
     const newBook = new BookObj(title, author, image, publisher, description)
     setMyLibrary([...myLibrary, newBook])
   }
-
   const removeFromLibrary = (unwantedTitle) => {
     const newLibrary = myLibrary.filter(book => book.title!==unwantedTitle)
     setMyLibrary(newLibrary)
   }
 
+  //UserName
+  const [userName, setUserName] = useState('fellow bookworm');
+  const writeNameOnNavBar = (userName) => setUserName(userName)
+
   return (
     <div>
-      <Navbar />
+      <Navbar userName={userName} />
 
       <Routes>
         <Route path='/' element={<Banner />} />
         <Route path='/library' element={<Library myLibrary={myLibrary} addToLibrary={addToLibrary} removeFromLibrary={removeFromLibrary} />} />
-        <Route path='/profile' element={<Profile />} />
+        <Route path='/profile' element={<Profile currentName={userName} writeNameOnNavBar={writeNameOnNavBar} />} />
         <Route path='/search' element={<Search myLibrary={myLibrary} addToLibrary={addToLibrary}  removeFromLibrary={removeFromLibrary} />} />
         <Route path='/search/result' element={<p>Searching...</p>} />
       </Routes>
