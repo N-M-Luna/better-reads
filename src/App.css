@@ -87,6 +87,23 @@ body {
 .text-link:hover {
   color: #B46060;
 }
+.sign-in-form label {
+  display: block;
+  margin-bottom: 15px;
+}
+.sign-in-form button {
+  background-color: #4D4D4D;
+  border: none;
+  border-radius: 10px;
+  color: #FFF4E0;
+  display: block;
+  font-size: 1.1rem;
+  margin: 5px;
+  padding: 7px;
+} 
+.sign-in-form button:hover {
+  background-color: #B46060;
+}
 
 footer {
   border-top: #4D4D4D 1px solid;

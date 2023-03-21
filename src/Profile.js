@@ -2,12 +2,14 @@ import { useState } from "react";
 
 function Profile({currentName, writeNameOnNavBar}) {
   const [name, setName] = useState("");
+  const [pass, setPass] = useState('');
 
   //Fake sign in and fake sing out
   const handleSubmit = (event) => {
     event.preventDefault();
-    setName(name)
-    writeNameOnNavBar(name)
+    const inputName = event.target.inputName.value
+    setName(inputName)
+    writeNameOnNavBar(inputName)
   }
   const signOut = () => {
     setName('')
@@ -17,17 +19,24 @@ function Profile({currentName, writeNameOnNavBar}) {
   if (currentName === 'fellow bookworm') {
     return (
         <div>
-            <h2>Sign in to see your profile.</h2>
-            <form className="sign-in-form" onSubmit={handleSubmit}>
-          <label>Username: 
-            <input 
-              type="text" 
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </label>
-          <input type="submit" />
-        </form></div>
+          <h2>Sign in to see your profile.</h2>
+          <form className="sign-in-form" onSubmit={handleSubmit}>
+            <label>Username:
+              <input
+                type="text"
+                name="inputName"
+                onChange={(e) => handleSubmit}
+              />
+            </label>
+            <label>Password:
+              <input
+                type="password"
+                name="pass"
+              />
+            </label>
+            <button type="submit">Sign in</button>
+          </form>
+        </div>
     )
   } else {
     return (
@@ -41,6 +50,6 @@ function Profile({currentName, writeNameOnNavBar}) {
         </div>
     )
   }
- }
+ }// TODO add more input fields
 
  export default Profile;

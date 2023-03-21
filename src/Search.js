@@ -67,7 +67,7 @@ function Search({myLibrary, addToLibrary, removeFromLibrary}) {
     })
   });
 
-    return (
+    return ( // TODO Add searching function!
         <div>
             <p>Search best-selling books by author: _________ or by date: __________ </p>
             <span className="dingbat fa-solid fa-book-open-reader"></span>
